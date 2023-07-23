@@ -8,7 +8,7 @@ func closureForCaptureList() {
     var val = 100 //Value Type
     var p = Person() //Reference Type
     
-    let closureWithoutCaptureList = { // No captured list in this closure. Everytime invoked, then only it try to fetch what's available as it not not capturing anything within
+    let closureWithoutCaptureList = { // No captured list in this closure. Everytime invoked, then only it try to fetch what's available as it is not capturing anything within
         print("Closure without Capture list, val = \(val), Name = \(p.name)")
     }
     
@@ -25,9 +25,10 @@ func closureForCaptureList() {
     // Capture List
     
     val = 400
-    let closureWithCaptureList = { [val, p] in // At this instance, it has captured value type val = 400 and reference type p, but not value of p.name which is p.name = Godambi within
+    let closureWithCaptureList = { [val, p] in // At this instance, it has captured value type val = 400 and reference type p, but not values of p which is p.name = Godambi within
         print("Closure2 val = \(val), Name = \(p.name)")
     }
+
     // val = 400, p.name = Godambi
     closureWithCaptureList()
     
@@ -39,7 +40,7 @@ func closureForCaptureList() {
     closureWithCaptureList()
     
     val = 600
-    p = Person() // A new reference is created and assigned to p, But the capture list will have the old reference value only. Any changes to p now, will be done in a different memory location and not in the location of old p reference. So p.name = "Drakshi" is in the new memeory location which will be shown
+    p = Person() // A new reference is created and assigned to p, But the capture list will have the old reference value only. Any changes to p now, will be done in a different memory location and not in the location of old p reference. So instead of p.name = "Drakshi" which is in the new memeory location it prints old ref value "Badami"
     p.name = "Drakshi"
     // val = 400, p.name = Badami
     closureWithCaptureList()

@@ -1,4 +1,9 @@
-import UIKit
+import Foundation
+
+/*
+ Associatedtype is a placeholder name of a type to use until the protocol is adopted and the exact type is specified.
+ They prevent writing duplicate code by making it easier to define a common interface for multiple scenarios. This way, the same logic can be reused for multiple different types, allowing you to write and test logic only once.
+*/
 
 protocol ShoppingCartable {
     associatedtype ProductType
