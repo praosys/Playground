@@ -1,3 +1,8 @@
+//  Understanding Race condition and how to solve it
+//
+//  Created by Prasanna Rao.
+//
+
 import Foundation
 
 /*
@@ -55,6 +60,7 @@ showRaceCondition()
 func solvedRaceCondition() {
     let counter = Counter()
     let group = DispatchGroup()
+    // A serial Dispatch Queue performs only one task at the time.
     let serialDispatchQueue = DispatchQueue(label: "my.serial.lock.queue")
     
     for _ in 0..<1000 {
